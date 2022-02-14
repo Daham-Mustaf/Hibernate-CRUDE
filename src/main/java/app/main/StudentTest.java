@@ -8,7 +8,6 @@ import app.service.impl.StudentServiceImpl;
 
 public class StudentTest {
 	public static void main(String[] args) {
-
 		StudentService studentService = new StudentServiceImpl();
 		createStudent(studentService);
 	}
@@ -16,7 +15,6 @@ public class StudentTest {
 	private static void createStudent(StudentService studentService) {
 		studentService.creatStudent(getStudent());
 	}
-
 	private static Student getStudent() {
 		Student student2 = new Student();
 		student2.setStudentName("Ali Mustafa");

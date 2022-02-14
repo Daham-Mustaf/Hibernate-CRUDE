@@ -25,8 +25,9 @@ public class StudentDaoImpl implements StudentDao {
 
 	@Override
 	public Student fetchStudentById(int id) {
+		Student student = null;
 		try (Session session = UtilHibernate.getSessionFactory().openSession()) {
-			Student student = session.get(Student.class, id);
+			 student = session.get(Student.class, id);
 			if (student != null) {
 				session.beginTransaction();
 				student.setStudentName("Updated Student");
@@ -40,7 +41,7 @@ public class StudentDaoImpl implements StudentDao {
 			e.printStackTrace();
 		}
 
-		return null;
+		return student;
 	}
 
 	@Override
